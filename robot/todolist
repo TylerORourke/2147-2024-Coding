@@ -1,0 +1,8 @@
+done= follower motors, shooter subsystem, manual code for arm, add PID,
+
+do later = test PID velocity to shooter
+do later= test PID position to arm
+do later= re-update technical spreadsheet
+do later= set id's on swerve mini
+do at somepoint= GITHUB
+do at some point in time=create auto
