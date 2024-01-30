@@ -48,8 +48,8 @@ public class RobotContainer {
       ()->shooterSubsystem.ShooterMotorSpeed(0)));
 
       //arm
-      driver.start().whileTrue(new InstantCommand(()->{armSubsystem.floorArm();}));
-      driver.back().whileTrue(new InstantCommand(()->{armSubsystem.stowedArm();}));
+      driver.leftTrigger().whileTrue(new InstantCommand(()->{armSubsystem.floorArm();}));
+      driver.rightTrigger().whileTrue(new InstantCommand(()->{armSubsystem.stowedArm();}));
       driver.b().whileTrue(new InstantCommand(()->{armSubsystem.ampScoreArm();}));
      
 

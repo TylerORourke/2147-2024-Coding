@@ -13,8 +13,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ShooterSubsystem extends SubsystemBase {
   /** Creates a new ShooterSubsystem. */
-  private CANSparkFlex ShooterMotor = new CANSparkFlex(11, MotorType.kBrushless);
-  private CANSparkFlex ShooterMotorFollower = new CANSparkFlex(12, MotorType.kBrushless);
+  private CANSparkFlex ShooterMotor = new CANSparkFlex(15, MotorType.kBrushless);
+  private CANSparkFlex ShooterMotorFollower = new CANSparkFlex(16, MotorType.kBrushless);
   private RelativeEncoder ShooterMotor_encoder;
   private SparkPIDController ShooterMotor_pidController;
     // PID coefficients............................................
@@ -36,8 +36,8 @@ public class ShooterSubsystem extends SubsystemBase {
         ShooterMotor.setInverted(false);  
         ShooterMotorFollower.restoreFactoryDefaults();
         ShooterMotorFollower.setIdleMode(CANSparkFlex.IdleMode.kCoast);
-        ShooterMotorFollower.setInverted(true);
         ShooterMotorFollower.follow(ShooterMotor);
+        ShooterMotorFollower.setInverted(true);
         ShooterMotor.enableSoftLimit(CANSparkFlex.SoftLimitDirection.kForward, false);
         ShooterMotor.enableSoftLimit(CANSparkFlex.SoftLimitDirection.kReverse, false);
       
@@ -58,12 +58,12 @@ public class ShooterSubsystem extends SubsystemBase {
 
   }
   public void SpeakerShot () {
-    ShooterMotor_pidController.setReference(speaker, CANSparkFlex.ControlType.kPosition);
+    ShooterMotor_pidController.setReference(speaker, CANSparkFlex.ControlType.kVelocity);
     }
   public void ShooterMotorSpeed(double speed) {
     ShooterMotor.set(speed);
   }
   public void AmpShot () {
-    ShooterMotor_pidController.setReference(amp, CANSparkFlex.ControlType.kPosition);
+    ShooterMotor_pidController.setReference(amp, CANSparkFlex.ControlType.kVelocity);
     }
 }

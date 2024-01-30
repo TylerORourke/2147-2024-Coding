@@ -10,7 +10,7 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSubsystem extends SubsystemBase {
-    private CANSparkFlex intakeMotor = new CANSparkFlex(10, MotorType.kBrushless);
+    private CANSparkFlex intakeMotor = new CANSparkFlex(14, MotorType.kBrushless);
 
   public IntakeSubsystem() {
         intakeMotor.restoreFactoryDefaults();

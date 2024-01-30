@@ -86,16 +86,16 @@ public class ArmSubsystem extends SubsystemBase {
 
   public void floorArm() {
     // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'floorArm'");
+    Arm_pidController.setReference(floorArm, CANSparkFlex.ControlType.kPosition);
   }
 
   public void stowedArm() {
     // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'stowedArm'");
+    Arm_pidController.setReference(stowedArm, CANSparkFlex.ControlType.kPosition);
   }
 
 public void ampScoreArm() {
     // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'ampScoreArm'");
+    Arm_pidController.setReference(ampScoreArm, CANSparkFlex.ControlType.kPosition);
 }
 }
